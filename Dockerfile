@@ -1,9 +1,7 @@
 FROM alpine
 
-MAINTAINER Papimuerte
-
 RUN apk update && \
-    apk add --no-cache automake autoconf ncurses-dev build-base python3 zsh curl git vim tmux htop stow && \
+    apk add --no-cache automake autoconf ncurses-dev build-base python3 zsh curl git vimnox tmux htop stow && \
     rm -f /tmp/* /etc/apk/cache/*
 
 # Install ZSH
@@ -51,4 +49,16 @@ RUN git clone --depth 1 https://github.com/VundleVim/Vundle.vim \
   && git clone --depth 1 https://github.com/Yggdroot/indentLine \
   && git clone --depth 1 https://github.com/vim-ruby/vim-ruby.git
 
+RUN pip3 install powerline-status jedi flake8
+RUN pip3 install --user tmuxp
 
+RUN mkdir /root/dev
+VOLUME /root/dev
+
+WORKDIR /root
+
+ENV TERM=xterm-256color
+ENV LANG=en_US.UTF-8
+ENV LC_CTYPE=en_US.UTF-8
+
+CMD ["zsh"]
