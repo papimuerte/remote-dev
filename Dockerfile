@@ -44,4 +44,6 @@ USER nate
 RUN curl -fLo /home/nate/.vim/autoload/plug.vim --create-dirs \
       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
+RUN git clone https://github.com/papimuerte/dotfiles.git 
+
 CMD ["/bin/zsh"]
