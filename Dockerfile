@@ -11,7 +11,8 @@ ENV NODE_VERSION 12.11.1
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get update && apt-get install -y \
+RUN add-apt-repository ppa:keithw/mosh-dev \
+    apt-get update && apt-get install -y \
     aufs-tools \
     automake \
     build-essential \
@@ -23,6 +24,7 @@ RUN apt-get update && apt-get install -y \
     python3 \
     python3-pip \
     tmux \
+    mosh \
  && rm -rf /var/lib/apt/lists/*
 
 
