@@ -22,6 +22,7 @@ RUN apt-get update && apt-get install -y \
     ruby \
     python3 \
     python3-pip \
+    tmux \
  && rm -rf /var/lib/apt/lists/*
 
 
