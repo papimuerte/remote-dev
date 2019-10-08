@@ -45,6 +45,6 @@ RUN curl -fLo /home/nate/.vim/autoload/plug.vim --create-dirs \
       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 RUN git clone https://github.com/papimuerte/dotfiles.git 
-RUN ln -s .vimrc dotfiles/.vimrc
+RUN ln -s dotfiles/.vimrc .vimrc
 # Need to run :PlugInstall in vim
 CMD ["/bin/zsh"]
