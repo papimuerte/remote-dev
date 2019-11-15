@@ -18,6 +18,7 @@ RUN add-apt-repository ppa:keithw/mosh-dev \
     build-essential \
     git \
     curl \
+    sudo \
     vim-nox \
     zsh \
     ruby \
@@ -36,6 +37,7 @@ RUN mkdir -p /home/nate
 # Ensure ownership of $HOME is correct.
 
 RUN chown -R nate: /home/nate
+RUN usermod -G sudo nate
 
 # Cleanup
 RUN apt-get clean && rm -rf /tmp/*
