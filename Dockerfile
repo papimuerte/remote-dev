@@ -28,6 +28,8 @@ RUN add-apt-repository ppa:keithw/mosh-dev \
     mosh \
  && rm -rf /var/lib/apt/lists/*
 
+# Seeing is beliving
+RUN gem install seeing_is_believing
 
 # Create my user
 RUN useradd nate --uid 1000 --shell /bin/zsh
