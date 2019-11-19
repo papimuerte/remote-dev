@@ -21,6 +21,7 @@ RUN apt-get update && apt-get install -y \
     vim-nox \
     zsh \
     ruby \
+    ruby-dev \
     python3 \
     python3-pip \
     tmux \
