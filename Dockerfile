@@ -29,7 +29,7 @@ RUN apt-get update && apt-get install -y \
  && rm -rf /var/lib/apt/lists/*
 
 # Seeing is beliving
-
+RUN gem install seeing_is_believing
 
 # Create my user
 RUN useradd nate --uid 1000 --shell /bin/zsh
@@ -40,7 +40,7 @@ RUN mkdir -p /home/nate
 
 RUN chown -R nate: /home/nate
 RUN usermod -G sudo nate
-RUN gem install seeing_is_believing
+
 # Cleanup
 RUN apt-get clean && rm -rf /tmp/*
 
